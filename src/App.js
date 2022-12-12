@@ -1,7 +1,7 @@
 import Header from "./Header";
-import Articles from "./Articles";
+import Articles from "./ArticlesController/Articles";
 import Divider from "./Divider";
-import RandomCocktail from "./RandomCocktail";
+import RandomCocktail from "./Cocktails/RandomCocktail";
 
 
 function App() {

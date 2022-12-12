@@ -1,7 +1,7 @@
 import { Card } from 'antd';
 import { useState, useEffect } from 'react';
 
-import Divider from './Divider';
+import Divider from '../Divider';
 
 const RandomCocktail = () => {
     const [randomCocktail, setRandomCocktail] = useState(null);
