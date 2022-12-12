@@ -12,6 +12,7 @@ const Articles = () => {
             date: new Date("2021-01-01"),
             content: "Contenu de l'article 1",
             isPublished: true,
+            id: 1,
         },
         {
             title: "Titre de l'article 2",
@@ -21,6 +22,7 @@ const Articles = () => {
             date: new Date("2021-01-01"),
             content: "Contenu de l'article 2",
             isPublished: false,
+            id: 2,
         },
         {
             title: "Titre de l'article 3",
@@ -30,6 +32,7 @@ const Articles = () => {
             date: new Date("2021-01-01"),
             content: "Contenu de l'article 3",
             isPublished: true,
+            id: 3,
         },
     ];
 
@@ -39,7 +42,7 @@ const Articles = () => {
                 <Row>
                     {articles.map((article) =>
                         article.isPublished && (
-                            <Col span={6}>
+                            <Col  key={article.id} span={6}>
                                 <Article
                                     article={article}
                                 />
