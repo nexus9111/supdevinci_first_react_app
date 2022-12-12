@@ -1,9 +1,9 @@
-import { Card } from 'antd';
 import { Button } from 'antd';
 import { Col, Row } from 'antd';
 import { useState, useEffect } from 'react';
 
 import CocktailCard from './CocktailCard';
+import LoadingCocktailCard from './LoadingCocktailCard';
 
 const RandomCocktail = () => {
     const [randomCocktail, setRandomCocktail] = useState(null);
@@ -30,12 +30,7 @@ const RandomCocktail = () => {
                     {randomCocktail ? (
                         <CocktailCard cocktail={randomCocktail} />
                     ) : (
-                        // skeleton loading card
-                        <Card style={{ width: 300, marginTop: 16 }} loading={true}>
-                            <p>Card content</p>
-                            <p>Card content</p>
-                            <p>Card content</p>
-                        </Card>
+                        <LoadingCocktailCard />
                     )}
                 </Col>
                 <Col span={12}>
@@ -43,12 +38,7 @@ const RandomCocktail = () => {
                     {randomCocktailOnClick ? (
                         <CocktailCard cocktail={randomCocktailOnClick} />
                     ) : (
-                        // skeleton loading card
-                        <Card style={{ width: 300, marginTop: 16 }} loading={true}>
-                            <p>Card content</p>
-                            <p>Card content</p>
-                            <p>Card content</p>
-                        </Card>
+                        <LoadingCocktailCard />
                     )}
                 </Col>
             </Row>
