@@ -41,11 +41,7 @@ const Articles = () => {
                         article.isPublished && (
                             <Col span={6}>
                                 <Article
-                                    title={article.title}
-                                    image={article.image}
-                                    subtitle={article.subtitle}
-                                    date={article.date}
-                                    content={article.content}
+                                    article={article}
                                 />
                             </Col>
                         )
