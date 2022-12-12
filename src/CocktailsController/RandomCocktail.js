@@ -23,7 +23,6 @@ const RandomCocktail = () => {
         setRandomCocktailOnClick(data.drinks[0]);
     }
 
-
     return (
         <>
             <Row>
