@@ -2,6 +2,7 @@ import Header from "./Header";
 import Articles from "./ArticlesController/Articles";
 import Divider from "./Divider";
 import RandomCocktail from "./CocktailsController/RandomCocktail";
+import ListCocktails from "./CocktailsController/ListCocktails"
 
 
 function App() {
@@ -12,6 +13,8 @@ function App() {
       <Articles />
       <Divider title="Random cocktail" />
       <RandomCocktail />
+      <Divider title="All cocktails" />
+      <ListCocktails />
     </div>
   );
 }
