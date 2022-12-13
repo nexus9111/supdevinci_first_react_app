@@ -5,11 +5,7 @@ import { useState, useEffect } from 'react';
 import CocktailCard from './CocktailCard';
 import LoadingCocktailCard from './LoadingCocktailCard';
 
-const fetchRandomCocktailAPI = async () => {
-    const response = await fetch('https://www.thecocktaildb.com/api/json/v1/1/random.php');
-    const data = await response.json();
-    return data;
-}
+import cocktailApiUtils from '../apiUtils/cocktailApiRequests'
 
 const RandomCocktail = () => {
     const [randomCocktail, setRandomCocktail] = useState(null);
@@ -17,13 +13,13 @@ const RandomCocktail = () => {
 
     useEffect(() => {
         (async () => {
-            const data = await fetchRandomCocktailAPI();
+            const data = await cocktailApiUtils.getRandomCocktail();
             setRandomCocktail(data.drinks[0]);
         })()
     }, []);
 
     const viewRandomCocktail = async () => {
-        const data = await fetchRandomCocktailAPI();
+        const data = await cocktailApiUtils.getRandomCocktail();
         setRandomCocktailOnClick(data.drinks[0]);
     }
 
