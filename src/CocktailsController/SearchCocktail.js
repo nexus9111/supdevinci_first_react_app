@@ -1,14 +1,17 @@
-import { Col, Row, Button, Input } from 'antd';
+import { Col, Row } from 'antd';
 import { useState } from 'react';
 
 import CocktailCard from './CocktailCard';
 
 import cocktailApiUtils from '../apiUtils/cocktailApiRequests'
+import FormSearchCocktail from './FormSearchCocktail'
 
 const ListCocktails = () => {
     const [cocktails, setCocktails] = useState(null);
 
-    const searchCocktail = async (cocktailName) => {
+    const searchCocktail = async (e) => {
+        e.preventDefault();
+        const cocktailName = e.target.search.value;
         if (cocktailName === "") {
             alert("Please enter a cocktail name");
             return;
@@ -34,10 +37,7 @@ const ListCocktails = () => {
                     </>
                 ) : (
                     <Col span={6}>
-                        <form onSubmit={(e) => { e.preventDefault(); searchCocktail(e.target[0].value); }}>
-                            <Input type="text" placeholder="Search for a cocktail" />
-                            <Button htmlType="submit" type="primary">Search</Button>
-                        </form>
+                        <FormSearchCocktail onSubmit={searchCocktail} />
                     </Col>
                 )}
 
