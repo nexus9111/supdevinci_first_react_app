@@ -18,24 +18,29 @@ const ListCocktails = () => {
             alert("Cocktail not found");
             return;
         }
-        setCocktails(data.drinks[0]);
+        setCocktails(data.drinks);
     }
 
     return (
         <>
             <Row>
-                <Col span={6}>
-                    {cocktails ? (
-                        <CocktailCard cocktail={cocktails} />
-                    ) : (
-                        <>
-                            <form onSubmit={(e) => {e.preventDefault(); searchCocktail(e.target[0].value);}}>
-                                <Input type="text" placeholder="Search for a cocktail" />
-                                <Button htmlType="submit" type="primary">Search</Button>
-                            </form>
-                        </>
-                    )}
-                </Col>
+                {cocktails ? (
+                    <>
+                        {(cocktails.map((ingredient) =>
+                            <Col span={6} key={ingredient.strDrink}>
+                                <CocktailCard cocktail={ingredient} />
+                            </Col>
+                        ))}
+                    </>
+                ) : (
+                    <Col span={6}>
+                        <form onSubmit={(e) => { e.preventDefault(); searchCocktail(e.target[0].value); }}>
+                            <Input type="text" placeholder="Search for a cocktail" />
+                            <Button htmlType="submit" type="primary">Search</Button>
+                        </form>
+                    </Col>
+                )}
+
             </Row>
         </>
     )
