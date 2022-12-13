@@ -14,7 +14,7 @@ function App() {
       <Articles />
       <Divider title="Random cocktail" />
       <RandomCocktail />
-      <Divider title="All cocktails" />
+      <Divider title="Search cocktails" />
       <SearchCocktail />
       <Divider title="All cocktails" />
       <ListCocktails />
