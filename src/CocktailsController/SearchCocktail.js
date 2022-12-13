@@ -15,7 +15,7 @@ const ListCocktails = () => {
         }
         const data = await cocktailApiUtils.getCocktailByName(cocktailName);
         if (data.drinks === null) {
-            alert("Cocktail not found");
+            alert("No cocktails found");
             return;
         }
         setCocktails(data.drinks);
