@@ -26,9 +26,9 @@ const ListCocktails = () => {
             <Row>
                 {cocktails ? (
                     <>
-                        {(cocktails.map((ingredient) =>
-                            <Col span={6} key={ingredient.strDrink}>
-                                <CocktailCard cocktail={ingredient} />
+                        {(cocktails.map((cocktail) =>
+                            <Col span={6} key={cocktail.strDrink}>
+                                <CocktailCard cocktail={cocktail} />
                             </Col>
                         ))}
                     </>
